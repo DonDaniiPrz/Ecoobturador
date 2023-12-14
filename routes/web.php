@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CuidadanoController;
+use App\Http\Controllers\Backend\RecolectorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,5 +38,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 });
+
+Route::middleware(['auth', 'role:cuidadano'])->group(function () {
+    Route::get('/cuidadano/dashboard', [CuidadanoController::class, 'dashboard'])->name('cuidadano.dashboard');
+
+
+});
+
+Route::middleware(['auth', 'role:recolector'])->group(function () {
+    Route::get('/recolector/dashboard', [RecolectorController::class, 'dashboard'])->name('recolector.dashboard');
+
+
+});
+
 
 
