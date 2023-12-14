@@ -35,5 +35,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 });
-
-
+Route::resource('users', App\Http\Controllers\UserController::class);
+Route::resource('solicitudes_ciudadanos', App\Http\Controllers\SolicitudesCiudadanoController::class);
+Route::resource('rutas', App\Http\Controllers\RutaController::class);
