@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CuidadanoController;
+use App\Http\Controllers\Backend\RecolectorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +38,5 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 });
-Route::resource('users', App\Http\Controllers\UserController::class);
-Route::resource('solicitudes_ciudadanos', App\Http\Controllers\SolicitudesCiudadanoController::class);
-Route::resource('rutas', App\Http\Controllers\RutaController::class);
+
+
